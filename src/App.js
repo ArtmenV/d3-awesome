@@ -2,11 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from './store/counter';
 import { addTodo, removeLastTodo } from './store/todo-list';
-import { Circle } from './components/Circle'
-import { Axis } from './components/Axis'
+import { Circle } from './components/d3/Circle'
+import { Axis } from './components/d3/Axis'
 import logo from './logo.svg';
-import { LineChart } from './components/LineChart';
+import { LineChart } from './components/d3/LineChart';
 import './App.css';
+import { AxesAndScale } from './components/d3/AxesScale';
+import { AnimatedBarChart } from './components/d3/AnimatedBarChart';
 
 function App() {
   const [addNewTodo, setAddTodo] = React.useState('')
@@ -57,9 +59,11 @@ function App() {
 				<button onClick={() => dispatch(decrement())}>decrement</button>
 			</header> */}
       <main>
+        <AnimatedBarChart />
+        {/* <AxesAndScale /> */}
         {/* <Circle /> */}
         {/* <Axis /> */}
-        <LineChart />
+        {/* <LineChart /> */}
       </main>  
 		</div>
 	)
