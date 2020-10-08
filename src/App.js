@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from './store/counter';
 import { addTodo, removeLastTodo } from './store/todo-list';
 import { Circle } from './components/Circle'
+import { Axis } from './components/Axis'
 import logo from './logo.svg';
+import { LineChart } from './components/LineChart';
 import './App.css';
 
 function App() {
@@ -12,30 +14,30 @@ function App() {
   const todo = useSelector(({ todoSlice }) => todoSlice.todoLists)
   const dispatch = useDispatch()
 
-  const changeAddTodo = (e) => {
-    setAddTodo(e.target.value)
-  }
+  // const changeAddTodo = (e) => {
+  //   setAddTodo(e.target.value)
+  // }
 
-  const onKeyEnter = (e) => {
-    if (e.key === 'Enter') {
-      changeAddTodo(e)
-      dispatch(addTodo(e.target.value))
-    }
-  }
+  // const onKeyEnter = (e) => {
+  //   if (e.key === 'Enter') {
+  //     changeAddTodo(e)
+  //     dispatch(addTodo(e.target.value))
+  //   }
+  // }
 
-  const handleAddTodo = () => {
-    dispatch(addTodo(addNewTodo))
-    setAddTodo('')
-  }
+  // const handleAddTodo = () => {
+  //   dispatch(addTodo(addNewTodo))
+  //   setAddTodo('')
+  // }
 
-  const handleRemoveTodo = (value) => {
-    dispatch(removeLastTodo(value))
-  }
+  // const handleRemoveTodo = (value) => {
+  //   dispatch(removeLastTodo(value))
+  // }
 
   return (
 		<div className='App'>
 			<h1>{count}</h1>
-			<header className='App-header'>
+			{/* <header className='App-header'>
 				<img src={logo} className='App-logo' alt='logo' />
         <div>
           <input 
@@ -53,9 +55,11 @@ function App() {
         </ul>
 				<button onClick={() => dispatch(increment())}>increment</button>
 				<button onClick={() => dispatch(decrement())}>decrement</button>
-			</header>
+			</header> */}
       <main>
-        <Circle />
+        {/* <Circle /> */}
+        {/* <Axis /> */}
+        <LineChart />
       </main>  
 		</div>
 	)

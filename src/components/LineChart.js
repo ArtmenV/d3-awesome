@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as d3 from 'd3'
 
-export const Circle = () => {
+export const LineChart = () => {
   const [data, setData] = React.useState([15, 19, 23, 27, 33])
   const svgRef = React.useRef(null)
 
@@ -24,10 +24,12 @@ export const Circle = () => {
 
   return (
     <>
-      <svg ref={svgRef} />
+      <svg ref={svgRef}>
+        <path d="M0, 150 100, 100 150, 120" stroke="blue" fill="red"/>
+      </svg>
       <br />
       <button onClick={() => setData(data.map(data => data + 5))}>update data</button>
-      <button onClick={() => setData(data.filter(value => value < 18))}>filter data</button>
+      <button onClick={() => setData(data.filter(value => value < 28))}>filter data</button>
     </>
   )
 }
