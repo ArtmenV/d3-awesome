@@ -4,17 +4,18 @@ import { decrement, increment } from './store/counter';
 import { addTodo, removeLastTodo } from './store/todo-list';
 import { Circle } from './components/d3/Circle'
 import { Axis } from './components/d3/Axis'
-import logo from './logo.svg';
 import { LineChart } from './components/d3/LineChart';
-import './App.css';
 import { AxesAndScale } from './components/d3/AxesScale';
 import { AnimatedBarChart } from './components/d3/AnimatedBarChart';
 import { InteractiveBarChart } from './components/d3/InteractiveBarChart';
 import { ResponsiveChart } from './components/d3/ResponsiveChart';
+import { Chart } from './components/d3/RacingChart/Chart';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   const [addNewTodo, setAddTodo] = React.useState('')
-  const [data, setData] = React.useState([25, 30, 45, 60, 10, 65, 75]);
+  // const [data, setData] = React.useState([25, 30, 45, 60, 10, 65, 75]);
   // const count = useSelector(({ counterSlice }) => counterSlice.count)
   // const todo = useSelector(({ todoSlice }) => todoSlice.todoLists)
   // const dispatch = useDispatch()
@@ -62,7 +63,8 @@ function App() {
 				<button onClick={() => dispatch(decrement())}>decrement</button>
 			</header> */}
       <main>
-        <ResponsiveChart data={data} />
+        {/* <ResponsiveChart data={data} /> */}
+        <Chart />
         {/* <InteractiveBarChart /> */}
         {/* <AnimatedBarChart /> */}
         {/* <AxesAndScale /> */}
