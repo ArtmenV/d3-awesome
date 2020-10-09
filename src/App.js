@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from './store/counter';
 import { addTodo, removeLastTodo } from './store/todo-list';
 import { Circle } from './components/d3/Circle'
@@ -10,12 +10,14 @@ import './App.css';
 import { AxesAndScale } from './components/d3/AxesScale';
 import { AnimatedBarChart } from './components/d3/AnimatedBarChart';
 import { InteractiveBarChart } from './components/d3/InteractiveBarChart';
+import { ResponsiveChart } from './components/d3/ResponsiveChart';
 
 function App() {
   const [addNewTodo, setAddTodo] = React.useState('')
-  const count = useSelector(({ counterSlice }) => counterSlice.count)
-  const todo = useSelector(({ todoSlice }) => todoSlice.todoLists)
-  const dispatch = useDispatch()
+  const [data, setData] = React.useState([25, 30, 45, 60, 10, 65, 75]);
+  // const count = useSelector(({ counterSlice }) => counterSlice.count)
+  // const todo = useSelector(({ todoSlice }) => todoSlice.todoLists)
+  // const dispatch = useDispatch()
 
   // const changeAddTodo = (e) => {
   //   setAddTodo(e.target.value)
@@ -39,7 +41,7 @@ function App() {
 
   return (
 		<div className='App'>
-			<h1>{count}</h1>
+			{/* <h1>{count}</h1> */}
 			{/* <header className='App-header'>
 				<img src={logo} className='App-logo' alt='logo' />
         <div>
@@ -60,7 +62,8 @@ function App() {
 				<button onClick={() => dispatch(decrement())}>decrement</button>
 			</header> */}
       <main>
-        <InteractiveBarChart />
+        <ResponsiveChart data={data} />
+        {/* <InteractiveBarChart /> */}
         {/* <AnimatedBarChart /> */}
         {/* <AxesAndScale /> */}
         {/* <Circle /> */}
