@@ -9,6 +9,7 @@ import { LineChart } from './components/d3/LineChart';
 import './App.css';
 import { AxesAndScale } from './components/d3/AxesScale';
 import { AnimatedBarChart } from './components/d3/AnimatedBarChart';
+import { InteractiveBarChart } from './components/d3/InteractiveBarChart';
 
 function App() {
   const [addNewTodo, setAddTodo] = React.useState('')
@@ -59,7 +60,8 @@ function App() {
 				<button onClick={() => dispatch(decrement())}>decrement</button>
 			</header> */}
       <main>
-        <AnimatedBarChart />
+        <InteractiveBarChart />
+        {/* <AnimatedBarChart /> */}
         {/* <AxesAndScale /> */}
         {/* <Circle /> */}
         {/* <Axis /> */}
